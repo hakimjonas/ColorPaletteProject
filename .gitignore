@@ -4,3 +4,6 @@
 *.iml
 *.ipr
 
+# BSP (Build Server Protocol) directory
+.bsp/
+
