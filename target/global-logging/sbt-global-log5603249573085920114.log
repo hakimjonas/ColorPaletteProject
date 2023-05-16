@@ -1,0 +1,31 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(compile, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / compile[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/hakim/stuff/ColorPaletteProject/target/scala-2.13/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/home/hakim/stuff/ColorPaletteProject/src/main/scala/net/ghoula/ImageAnalyzer.scala:38:41: not enough arguments for method apply: (r: Double, g: Double, b: Double): ImageAnalyzer.this.ColorPoint in object ColorPoint.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameters g, b.[0m
+[0m[[0m[31merror[0m] [0m[0m    clusters.asScala.map(c => ColorPoint(c.getCenter.getPoint: _*)).toArray[0m
+[0m[[0m[31merror[0m] [0m[0m                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/hakim/stuff/ColorPaletteProject/src/main/scala/net/ghoula/ImageAnalyzer.scala:63:51: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : ImageAnalyzer.this.ColorPoint[0m
+[0m[[0m[31merror[0m] [0m[0m required: net.ghoula.ImageColor[0m
+[0m[[0m[31merror[0m] [0m[0m        val contrast = ColorPalette.contrastRatio(baseColor, color)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/hakim/stuff/ColorPaletteProject/src/main/scala/net/ghoula/ImageAnalyzer.scala:63:62: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : ImageAnalyzer.this.ColorPoint[0m
+[0m[[0m[31merror[0m] [0m[0m required: net.ghoula.ImageColor[0m
+[0m[[0m[31merror[0m] [0m[0m        val contrast = ColorPalette.contrastRatio(baseColor, color)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/hakim/stuff/ColorPaletteProject/src/main/scala/net/ghoula/ImageAnalyzer.scala:67:53: constructor cannot be instantiated to expected type;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (T1, T2)[0m
+[0m[[0m[31merror[0m] [0m[0m required: Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m      val closestColor = closestColors.minBy { case (_, contrast) => contrast }._1[0m
+[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/hakim/stuff/ColorPaletteProject/src/main/scala/net/ghoula/ImageAnalyzer.scala:67:46: diverging implicit expansion for type scala.math.Ordering[B][0m
+[0m[[0m[31merror[0m] [0m[0mstarting with method Tuple9 in object Ordering[0m
+[0m[[0m[31merror[0m] [0m[0m      val closestColor = closestColors.minBy { case (_, contrast) => contrast }._1[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 3 s, completed May 16, 2023, 1:22:39 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(idea-shell, None, None)[0m
