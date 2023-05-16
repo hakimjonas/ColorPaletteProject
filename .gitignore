@@ -7,3 +7,6 @@
 # BSP (Build Server Protocol) directory
 .bsp/
 
+# Target directory
+/target/
+
