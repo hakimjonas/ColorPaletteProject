@@ -22,12 +22,10 @@ This project generates a color palette from an image, based on the Solarized col
 
 ## Limitations
 
-- Currently, the tool only works with images that have at least two dominant colors.
 - The tool uses the RGB color space for color distance calculations, which may not always yield perceptually accurate results.
 
 ## Future Enhancements
 
-- Support for images with less than two dominant colors
 - Improved color distance calculation using the LAB color space
 
 ## License
