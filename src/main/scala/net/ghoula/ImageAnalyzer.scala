@@ -145,7 +145,7 @@ class ImageAnalyzer(imagePath: String) {
 
 object ImageAnalyzer {
   def main(args: Array[String]): Unit = {
-    val imagePath = "/home/hakim/stuff/ColorPaletteProject/src/main/resources/jakub-rozalski-preapare1.jpg"
+    val imagePath = "src/main/resources/input.jpg"
     val imageAnalyzer = new ImageAnalyzer(imagePath)
 
     val dominantColors = imageAnalyzer.getDominantColors(2)
@@ -160,7 +160,7 @@ object ImageAnalyzer {
     // Write the SVG string to a file
     import java.nio.file.{Paths, Files}
     import java.nio.charset.StandardCharsets
-    Files.write(Paths.get("/home/hakim/stuff/ColorPaletteProject/src/main/resources/output.svg"), svg.getBytes(StandardCharsets.UTF_8))
+    Files.write(Paths.get("src/main/resources/output.svg"), svg.getBytes(StandardCharsets.UTF_8))
   }
 }
 
