@@ -8,5 +8,33 @@
 .bsp/
 
 # Target directory
-/target/
+target/
+project/target/
+project/project/
+.idea/
+*.iml
+*.class
+*.log
+*.bak
+.DS_Store
+.cache
+.history
+.lib/
+dist/
+.paths
+.tags
+*.gen
+*.bak
+*.swp
+*.hprof
+*.orig
+.rej
+~
+*.~lock.*
+*.plastic*
 
+# sbt specific
+.sbt
+.sbtserver
+.swo
+.swn

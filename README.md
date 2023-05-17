@@ -33,3 +33,9 @@ This project generates a color palette from an image, based on the Solarized col
 ## License
 
 This project is licensed under the terms of the GNU General Public License v3.0 (GPL-3.0). See [LICENSE](LICENSE) file for more details.
+
+## Image Credit
+
+The image used in this project, "The Corcoran Collection (Museum Purchase, William A. Clark Fund)", is in the public domain.
+
+Source: [Corcoran Collection](https://www.nga.gov/collection/art-object-page.166500.html)

@@ -11,7 +11,7 @@ import scala.jdk.CollectionConverters._
 class ImageAnalyzer(imagePath: String) {
   private val image: BufferedImage = ImageIO.read(new File(imagePath))
 
-  val solarizedColors = Array(
+  private val solarizedColors = Array(
     ColorPoint(131, 148, 150), // base3
     ColorPoint(238, 232, 213), // base2
     ColorPoint(147, 161, 161), // base1
@@ -54,8 +54,8 @@ class ImageAnalyzer(imagePath: String) {
       pixels += ColorPoint(r, g, b)
     }
 
-    val clusterer = new KMeansPlusPlusClusterer[ColorPoint](numColors, 100)
-    val clusters = clusterer.cluster(pixels.toList.asJava)
+    val clusterFunction = new KMeansPlusPlusClusterer[ColorPoint](numColors, 100)
+    val clusters = clusterFunction.cluster(pixels.toList.asJava)
 
     clusters.asScala.map(c => {
       val points = c.getCenter.getPoint
@@ -64,7 +64,7 @@ class ImageAnalyzer(imagePath: String) {
 
   }
 
-  def findClosestColor(colors: Array[ColorPoint], target: ColorPoint): ColorPoint = {
+  private def findClosestColor(colors: Array[ColorPoint], target: ColorPoint): ColorPoint = {
     colors.minBy(color => ColorPalette.contrastRatio(color.toImageColor, target.toImageColor))
   }
 
@@ -102,9 +102,9 @@ class ImageAnalyzer(imagePath: String) {
       val gDiff = solarizedColor.g - solarizedBaseColor.g
       val bDiff = solarizedColor.b - solarizedBaseColor.b
 
-      val r = clamp(imageBaseColor.r + rDiff, 0, 255)
-      val g = clamp(imageBaseColor.g + gDiff, 0, 255)
-      val b = clamp(imageBaseColor.b + bDiff, 0, 255)
+      val r = clamp(imageBaseColor.r + rDiff)
+      val g = clamp(imageBaseColor.g + gDiff)
+      val b = clamp(imageBaseColor.b + bDiff)
 
       ColorPoint(r, g, b)
     }
@@ -113,9 +113,9 @@ class ImageAnalyzer(imagePath: String) {
   }
 
 
-  private def clamp(value: Double, min: Double, max: Double): Double = {
-    if (value < min) min
-    else if (value > max) max
+  private def clamp(value: Double): Double = {
+    if (value < 0) 0
+    else if (value > 255) 255
     else value
   }
 
@@ -145,7 +145,7 @@ class ImageAnalyzer(imagePath: String) {
 
 object ImageAnalyzer {
   def main(args: Array[String]): Unit = {
-    val imagePath = "src/main/resources/input.jpg"
+    val imagePath = "src/main/resources/luxembourg_gardens_2014.79.47.jpg"
     val imageAnalyzer = new ImageAnalyzer(imagePath)
 
     val dominantColors = imageAnalyzer.getDominantColors(2)
