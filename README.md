@@ -18,7 +18,7 @@ This project generates a color palette from an image, based on the Solarized col
 ## Requirements
 
 - Scala 2.13.7
-- sbt 1.5.5
+- sbt 1.8.2
 
 ## Limitations
 
