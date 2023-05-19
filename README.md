@@ -1,20 +1,23 @@
 # ColorPaletteProject
 
-This project generates a color palette from an image, based on the Solarized color scheme.
+This project generates a color palette from an image. It also includes support for the Solarized color scheme. 
 
 ## Features
 
-- Extracts dominant colors from an image using K-Means clustering
-- Maps dominant colors to the nearest Solarized color
-- Generates a new color palette by adjusting Solarized colors to match the image's color scheme
-- Outputs a SVG representation of the generated color palette
+- Extracts dominant colors from an image using K-Means++ clustering.
+- Scales the image to optimize processing time without sacrificing quality.
+- Provides an abstract `PaletteModel` for defining new color palette models.
+- Maps dominant colors to the nearest colors defined in the `PaletteModel`.
+- Generates a new color palette by adjusting colors based on the `PaletteModel`.
+- Outputs a SVG representation of the generated color palette.
+- Prints the hex codes of the colors in the generated color palette to the console.
 
 ## Usage
 
 1. Clone the repository to your local machine.
-2. In the `ImageAnalyzer` object, update the `imagePath` to point to your image.
-3. Run the `ImageAnalyzer` object. The new palette will be printed to the console, and a SVG representation will be saved to `src/main/resources/output.svg`.
-
+2. In the `Main` object, update the `imagePath` to point to your image.
+3. Run the `Main` object. The new palette(s) will be printed to the console, and a SVG representation will be saved to your specified path.
+   
 ## Requirements
 
 - Scala 2.13.7
@@ -26,7 +29,9 @@ This project generates a color palette from an image, based on the Solarized col
 
 ## Future Enhancements
 
-- Improved color distance calculation using the LAB color space
+- Improved color distance calculation using the LAB color space.
+- Support for other color spaces and color palette models.
+- Parallel processing for increased performance on multi-core systems.
 
 ## License
 
