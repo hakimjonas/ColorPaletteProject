@@ -63,6 +63,6 @@ object SolarizedModel extends PaletteModel {
       ImageColor(r, g, b)
     }
 
-    Palette(palette.toArray)
+    Palette(palette)
   }
 }
